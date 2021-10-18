@@ -1,6 +1,7 @@
 const cors = require("cors");
 require("dotenv").config();
 const express = require("express");
+const mongoose = require("mongoose");
 
 
 
@@ -11,16 +12,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const mongo = require("./mongo");
+const uri = process.env.MONGODB_URL;
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+ 
+  useUnifiedTopology: true,
+});
 
-(async () => {
-  try {
-// MongoDB Connection
-await mongo.connect();
-} catch (err)  {
-  console.log("Error Starting Server", err);
-}
-})();
+const connection = mongoose.connection;
+connection.once("open",() => {
+  console.log("MongoDB Datbase connection established successfully.");
+});
 
 const repositories = [];
 
@@ -55,7 +57,7 @@ app.use(logRequests);
 
 app.use('/repositories/:id',validateRepositoryId);
 
-app.get("/repositories", (request, response) => {
+app.get("/repositories", (request, response) => { 
 
   return response.json(repositories)
 
