@@ -171,7 +171,7 @@ app.put("/repositories/:id", (request, response) => {
     following,
     created_at,
     updated_at,
-    likes,} = request.body;
+    likes} = request.body;
 
   const repositoryIndex = repositories.findIndex(repository => repository.id == id)
 
