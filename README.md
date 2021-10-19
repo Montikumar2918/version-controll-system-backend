@@ -1,9 +1,9 @@
 by using postman app you can performaction like this 
 
-method (post):-   http://localhost:3001/repositories
+method (post):-   http://localhost:3001/repositories  you can fetch this link in frontend part locally you can perform the all operation post , get , create ,
 
 
-  put the data in body like :- 
+  put the data in body like :-etc..
   
   {
   "login": "mohit",
