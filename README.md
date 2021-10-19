@@ -1,6 +1,7 @@
-by using postman app you can performaction like this 
+by using postman app you can perform action like this 
 
-method (post):-   http://localhost:3001/repositories  you can fetch this link in frontend part locally you can perform the all operation post , get , create ,
+method (post):-   http://localhost:3001/repositories  you can fetch this link in frontend part like this :- (var response = await axios.get('http://localhost:3001/repositories')) then 
+ you can perform the all operation post , get , create etc.
 
 
   put the data in body like :-etc..
