@@ -163,5 +163,5 @@ likes:{
     unique: false
 },
 });
-const Repositories = mongoose.model("repositories",repositoriesSchema);
+const Repositories = mongoose.model("repositories",repositoriesSchema,"repositories");
 module.exports = Repositories;
